@@ -171,6 +171,7 @@
                 <version>2.13</version>
             </plugin>
         </plugins>
+        <finalName>GoogleTaskConverter</finalName>
     </build>
 
 </project>
