@@ -26,4 +26,4 @@ jobs:
       uses: actions/upload-artifact@v1.0.0
       with:
         name: GoogleTaskConverter
-        path: ./target/**
+        path: /home/runner/work/GoogleTaskConverter/GoogleTaskConverter/target/GoogleTaskConverter-1.0-SNAPSHOT.jar
