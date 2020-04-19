@@ -24,3 +24,6 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
+      with:
+        name: GoogleTaskConverter
+        path: ./target/**
