@@ -1,3 +1,5 @@
+package googletask.converter;
+
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -10,9 +12,9 @@ public class FileTools {
     public static String readFileToString(String path) {
         String content = null;
         try {
-            content = new String(Files.readAllBytes(Paths.get(path)));
+            content = new String(Files.readAllBytes(Paths.get(path)), StandardCharsets.UTF_8);
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println("Tasks.json file not found.");
         }
         return content;
     }
