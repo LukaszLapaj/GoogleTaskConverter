@@ -24,16 +24,27 @@ jobs:
       - name: Build with Maven
         run: mvn -B package --file pom.xml
 
-      - name: Tag and prepare release
+      - name: Compute next SemVer tag
+        id: semver
         uses: K-Phoen/semver-release-action@master
         with:
           release_branch: dev
+          release_strategy: none
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Upload release notes
-        uses: Roang-zero1/github-create-release-action@master
+      - uses: stefanzweifel/git-auto-commit-action@v2.1.0
         with:
-          created_tag: ${{ steps.tag_and_prepare_release.outputs.tag }}
+          commit_message: Release ${{ steps.semver.outputs.tag }}
+          branch: ${{ github.base_ref }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create release
+        id: tag
+        uses: K-Phoen/semver-release-action@master
+        with:
+          release_branch: dev
+          tag: ${{ steps.semver.outputs.tag }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
