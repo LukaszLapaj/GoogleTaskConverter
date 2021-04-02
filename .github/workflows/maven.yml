@@ -24,23 +24,13 @@ jobs:
       - name: Build with Maven
         run: mvn -B package --file pom.xml
 
-#      - name: Compute next SemVer tag
-#        id: semver
-#        uses: K-Phoen/semver-release-action@master
-#        with:
-#          release_branch: dev
-#          release_strategy: none
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
+          release_name: GoogleTaskConcerter v${{ github.run_number }}
           draft: false
           prerelease: false
 
@@ -50,8 +40,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: target/GoogleTaskConverter-jar-with-dependencies.jar
-          asset_name: GoogleTaskConverter.zip
-          asset_content_type: application/zip
+          asset_name: GoogleTaskConverter.jar
+          asset_content_type: application/java-archive
 
