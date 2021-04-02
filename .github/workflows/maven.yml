@@ -24,15 +24,20 @@ jobs:
       - name: Build with Maven
         run: mvn -B package --file pom.xml
 
-      - name: Create release
-        uses: Roang-zero1/github-create-release-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Create GitHub release
-        uses: Roang-zero1/github-upload-release-artifacts-action@master
-        with:
-          args:
-            target/GoogleTaskConverter-jar-with-dependencies.jar
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      if: github.event.pull_request.merged && startsWith(github.head_ref, 'RC')
+        steps:
+            - uses: actions/checkout@master
+              - name: Tag and prepare release
+                id: tag_and_prepare_release
+                uses: K-Phoen/semver-release-action@master
+                with:
+                  release_branch: dev
+                env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              - name: Upload release notes
+                if: steps.tag_and_prepare_release.outputs.tag
+                uses: Roang-zero1/github-create-release-action@master
+                with:
+                  created_tag: ${{ steps.tag_and_prepare_release.outputs.tag }}
+                env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
