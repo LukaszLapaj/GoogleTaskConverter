@@ -6,12 +6,15 @@ Go to [https://takeout.google.com/settings/takeout](https://takeout.google.com/s
 ## Usage
 Put downloaded .jar file in the same directory as extracted Google Task backup file which has to be renamed to `Tasks.json`. Run with:
 ```
-java -jar .\GoogleTaskConverter-jar-with-dependencies.jar
+java -jar .\GoogleTaskConverter.jar
 ```
 From each Google Task list, there will be created a separate .txt file with one task per line. Completed, hidden, deleted and empty tasks are skipped by default.
 
 ## Download
-[Download here](https://github.com/10se1ucgo/DisableWinTracking/releases/)
+[Download here](https://github.com/LukaszLapaj/GoogleTaskConverter/releases)
+
+## To do
+- [ ] Semantic version naming in CI/CD
 
 ## Requirements
-- Java 8+
+- Java 14+
