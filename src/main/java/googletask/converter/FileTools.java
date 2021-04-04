@@ -12,7 +12,7 @@ public class FileTools {
     public static String readFileToString(String path) {
         String content = null;
         try {
-            content = new String(Files.readAllBytes(Paths.get(path)), StandardCharsets.UTF_8);
+            content = Files.readString(Paths.get(path), StandardCharsets.UTF_8);
         } catch (IOException e) {
             System.err.println("Tasks.json file not found.");
         }
@@ -27,7 +27,7 @@ public class FileTools {
         String taskList = stringBuilder.toString().trim();
 
         try {
-            Files.write(filePath, taskList.getBytes(StandardCharsets.UTF_8), StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
+            Files.writeString(filePath, taskList, StandardCharsets.UTF_8, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
         } catch (IOException e) {
             e.printStackTrace();
         }
