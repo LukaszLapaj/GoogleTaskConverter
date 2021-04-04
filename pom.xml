@@ -8,9 +8,9 @@
     <artifactId>GoogleTaskConverter</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
-        <java.version>1.8</java.version>
-        <java.compiler>1.8</java.compiler>
-        <kotlin.version>1.3.70</kotlin.version>
+        <java.version>13</java.version>
+        <java.compiler>13</java.compiler>
+        <kotlin.version>1.3.72</kotlin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <maven.compiler.source>${java.version}</maven.compiler.source>
@@ -179,7 +179,7 @@
                     <source>${java.version}</source>
                     <!-- <release>${java.version}</release> -->
                     <compilerArgs>
-                        <arg>-Xlint:all,-processing</arg>
+                        <arg>-Xlint:all,-processing,--illegal-access=permit</arg>
                     </compilerArgs>
                 </configuration>
             </plugin>
