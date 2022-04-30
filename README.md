@@ -17,4 +17,4 @@ From each Google Task list, there will be created a separate .txt file with one 
 - [ ] Semantic version naming in CI/CD
 
 ## Requirements
-- Java 14+
+- Java 18+
