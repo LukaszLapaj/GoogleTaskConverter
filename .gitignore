@@ -244,3 +244,6 @@ $RECYCLE.BIN/
 ### Addidional ignores
 *.txt
 *.json
+
+# Exclude test resources
+!src/test/resources/*
