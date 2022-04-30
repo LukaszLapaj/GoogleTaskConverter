@@ -36,7 +36,7 @@ public class ExtractionTest {
 
         LinkedHashMap<String, LinkedHashSet<String>> extractedCsvFiles = convertGoogleTasksJsonToTodoistCsv(googleTasks);
         extractedCsvFiles.forEach((fileName, tasks) -> {
-            FileTools.saveTasksToFile(outputCatalog, fileName, tasks);
+            FileTools.saveTasksToFile(outputCatalog, fileName, tasks, true);
         });
 
         extractedCsvFiles.forEach((fileName, tasks) -> {

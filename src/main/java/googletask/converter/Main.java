@@ -24,7 +24,7 @@ public class Main {
 
         LinkedHashMap<String, LinkedHashSet<String>> extractedCsvFiles = convertGoogleTasksJsonToTodoistCsv(googleTasks);
         extractedCsvFiles.forEach((fileName, tasks) -> {
-            FileTools.saveTasksToFile(outputCatalog, fileName, tasks);
+            FileTools.saveTasksToFile(outputCatalog, fileName, tasks, true);
         });
     }
 
@@ -71,10 +71,13 @@ public class Main {
     }
 
     static String taskToString(Task task) {
-        // TYPE	CONTENT	PRIORITY	INDENT	AUTHOR	RESPONSIBLE	DATE	DATE_LANG	TIMEZONE
+        // TYPE,CONTENT,PRIORITY,INDENT,AUTHOR,RESPONSIBLE,DATE,DATE_LANG,TIMEZONE
         StringBuilder stringBuilder = new StringBuilder();
+        // TYPE
         stringBuilder.append("task,");
+        // Content
         stringBuilder.append(task.getTitle().trim()).append(",");
+        // PRIORITY
         stringBuilder.append("4,");
         // INDENT
         stringBuilder.append("1,");
@@ -89,8 +92,6 @@ public class Main {
         // DATE_LANG
         stringBuilder.append(",");
         // TIMEZONE
-        stringBuilder.append(",");
-        // meta
         stringBuilder.append(",");
         return stringBuilder.toString();
     }

@@ -19,11 +19,14 @@ public class FileTools {
         return content;
     }
 
-    public static void saveTasksToFile(String outputCatalog, String fileName, LinkedHashSet<String> tasks) {
+    public static void saveTasksToFile(String outputCatalog, String fileName, LinkedHashSet<String> tasks, boolean headers) {
         String outputFileName = fileName.trim().replace('/', '-') + ".txt";
         Path filePath = Paths.get(outputCatalog, outputFileName);
 
         StringBuilder stringBuilder = new StringBuilder();
+        if (headers) {
+            stringBuilder.append("TYPE,CONTENT,PRIORITY,INDENT,AUTHOR,RESPONSIBLE,DATE,DATE_LANG,TIMEZONE").append('\n');
+        }
         tasks.forEach(s -> stringBuilder.append(s).append('\n'));
         String taskList = stringBuilder.toString().trim();
 
