@@ -4,9 +4,9 @@ import com.google.gson.annotations.SerializedName
 
 data class Task(
         @SerializedName("completed")
-        val completed: String,
+        val completed: String?,
         @SerializedName("delete_time")
-        val deleteTime: String,
+        val deleteTime: String?,
         @SerializedName("deleted")
         val deleted: Boolean,
         @SerializedName("due")
@@ -18,7 +18,7 @@ data class Task(
         @SerializedName("kind")
         val kind: String,
         @SerializedName("notes")
-        val notes: String,
+        val notes: String?,
         @SerializedName("selfLink")
         val selfLink: String,
         @SerializedName("status")
