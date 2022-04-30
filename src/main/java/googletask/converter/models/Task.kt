@@ -10,7 +10,7 @@ data class Task(
         @SerializedName("deleted")
         val deleted: Boolean,
         @SerializedName("due")
-        val due: String,
+        val due: String?,
         @SerializedName("hidden")
         val hidden: Boolean,
         @SerializedName("id")
