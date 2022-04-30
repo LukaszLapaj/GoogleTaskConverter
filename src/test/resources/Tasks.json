@@ -1,0 +1,99 @@
+{
+  "kind": "tasks#taskLists",
+  "items": [
+    {
+      "kind": "tasks#tasks",
+      "id": "mock_list_id1",
+      "title": "MyTasks",
+      "updated": "2020-01-25T08:49:55.149391Z",
+      "items": [
+        {
+          "due": "2020-01-24T23:00:00Z",
+          "kind": "tasks#task",
+          "created": "2020-01-25T08:49:52.790Z",
+          "id": "mock_task_id1",
+          "completed": "2020-01-25T09:49:53.841Z",
+          "title": "Task1",
+          "task_type": "PERSONAL_TASK",
+          "updated": "2020-01-25T08:49:55.149391Z",
+          "selfLink": "https://www.googleapis.com/tasks/v1/lists/",
+          "status": "completed"
+        },
+        {
+          "due": "2019-01-24T11:00:00Z",
+          "kind": "tasks#task",
+          "created": "2020-01-26T08:49:52.790Z",
+          "id": "mock_task_id2",
+          "completed": "2020-01-26T09:49:53.841Z",
+          "title": "Task2",
+          "task_type": "PERSONAL_TASK",
+          "updated": "2020-01-25T08:49:55.149391Z",
+          "selfLink": "https://www.googleapis.com/tasks/v1/lists/",
+          "status": "needsAction"
+        },
+        {
+          "due": "2020-01-26T12:00:00Z",
+          "kind": "tasks#task",
+          "created": "2020-01-27T08:49:52.790Z",
+          "id": "mock_task_id3",
+          "completed": "2020-01-27T09:49:53.841Z",
+          "title": "Task3",
+          "task_type": "PERSONAL_TASK",
+          "updated": "2020-01-25T08:49:55.149391Z",
+          "selfLink": "https://www.googleapis.com/tasks/v1/lists/",
+          "status": "needsAction"
+        }
+      ],
+      "selfLink": "https://www.googleapis.com/tasks/v1/users/@me/lists/mock"
+    },
+    {
+      "kind": "tasks#tasks",
+      "id": "mock_list_id2",
+      "title": "Random tasks",
+      "updated": "2020-03-21T16:53:39.645503Z",
+      "items": [
+        {
+          "due": "2020-03-20T22:00:00Z",
+          "kind": "tasks#task",
+          "created": "2020-03-21T16:53:39.585Z",
+          "id": "mock_task_id4",
+          "title": "Task4",
+          "task_type": "PERSONAL_TASK",
+          "updated": "2020-03-21T16:53:39.645503Z",
+          "selfLink": "https://www.googleapis.com/tasks/v1/lists/",
+          "status": "needsAction"
+        },
+        {
+          "kind": "tasks#task",
+          "created": "2020-03-21T16:45:15.968Z",
+          "id": "mock_task_id5",
+          "title": "Task5",
+          "task_type": "PERSONAL_TASK",
+          "updated": "2020-03-21T16:45:16.010159Z",
+          "selfLink": "https://www.googleapis.com/tasks/v1/lists/",
+          "status": "needsAction"
+        },
+        {
+          "due": "2020-03-20T21:00:00Z",
+          "kind": "tasks#task",
+          "created": "2020-03-21T15:56:18.111Z",
+          "id": "mock_task_id6",
+          "title": "Task6",
+          "task_type": "PERSONAL_TASK",
+          "updated": "2020-03-21T15:56:18.154559Z",
+          "selfLink": "https://www.googleapis.com/tasks/v1/lists/",
+          "status": "needsAction"
+        }
+      ],
+      "selfLink": "https://www.googleapis.com/tasks/v1/users/@me/lists/mock"
+    },
+    {
+      "kind": "tasks#tasks",
+      "id": "mock_list_id3",
+      "title": "Empty list",
+      "updated": "2020-03-21T16:53:39.645503Z",
+      "items": [],
+      "selfLink": "https://www.googleapis.com/tasks/v1/users/@me/lists/mock"
+    }
+  ]
+}
