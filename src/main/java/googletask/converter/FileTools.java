@@ -20,7 +20,8 @@ public class FileTools {
     }
 
     public static void saveTasksToFile(String outputCatalog, String fileName, LinkedHashSet<String> tasks) {
-        Path filePath = Paths.get(outputCatalog, fileName.trim().replace('/', '-') + ".txt");
+        String outputFileName = fileName.trim().replace('/', '-') + ".txt";
+        Path filePath = Paths.get(outputCatalog, outputFileName);
 
         StringBuilder stringBuilder = new StringBuilder();
         tasks.forEach(s -> stringBuilder.append(s).append('\n'));
